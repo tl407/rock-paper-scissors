@@ -75,10 +75,11 @@ function playGame(){
     
     }
     // play 5 rounds 
-    for (let i = 0; i < 5; i++){
+    for (let i = 1; i <= 5; i++){
         // get human choice
         // get computer choice
         // play a round with these choices
+        console.log(`Round: ${i}`);
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
