@@ -23,13 +23,6 @@ function getHumanChoice(){
     return choice;
 }
 
-
-
-
-
-const humanSelection = getHumanChoce();
-const computerSelection = getComputerChoice();
-
 playRound(humanSelection, computerSelection);
 
 function playGame(){
@@ -39,7 +32,7 @@ function playGame(){
     function playRound(humanChoice, computerChoice){
         if (humanChoice == computerChoice){
             // a tie. no winner.
-            console.log()
+            console.log(`A tie! No points added.`)
         }
         else if(humanChoice == "rock"){
             if(computerChoice == "paper"){
@@ -79,6 +72,26 @@ function playGame(){
             }
         }
     
+    }
+    // play 5 rounds 
+    for (let i = 0; i < 5; i++){
+        // get human choice
+        // get computer choice
+        // play a round with these choices
+        let humanSelection = getHumanChoce();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+
+    }
+    // print winner of game (5 rounds) with scores
+    if (humanScore > computerScore){
+        console.log(`You win! Your score: ${humanScore} Computer Score: ${computerScore}`)
+    }
+    else if (computerScore > humanScore){
+        console.log(`You lost! Your score: ${humanScore} Computer Score: ${computerScore}`)
+    }
+    else {
+        console.log(`It's a tie! Your score: ${humanScore} Computer Score: ${computerScore}`)
     }
 
 }
